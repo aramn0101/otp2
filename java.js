@@ -51,16 +51,17 @@ function codeverify() {
 }
 */
 
-reader();
-function reader() {
+render();
+function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
     "recaptcha-container"
   );
-  recaptchaVerifier.reader();
+  recaptchaVerifier.render();
 }
 
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
+
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
