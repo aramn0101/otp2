@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
+/*
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -47,5 +47,46 @@ function codeverify() {
     .catch(function () {
       document.getElementById("p-conf")[0].style.display = "none";
       document.getElementById("n-conf")[0].style.display = "block";
+    });
+}
+*/
+
+window.onload = function () {
+  reader();
+};
+function reader() {
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+    "recaptcha-container"
+  );
+  recaptchaVerifier.reader();
+}
+
+function phoneAuth() {
+  var number = document.getElementById("number").value;
+  firebase
+    .auth()
+    .signInWithPhoneNumber(number, window.recaptchaVerifier)
+    .then(function (confirmationResult) {
+      window.confirmationResult = confirmationResult;
+      coderesult = confirmationResult;
+      console.log(coderesult);
+      alert("meassge sent");
+    })
+    .catch(function (error) {
+      alert(error.message);
+    });
+}
+
+function codeverify() {
+  var code = document.getElementById("verificationcode").value;
+  coderesult
+    .confirm(code)
+    .then(function (result) {
+      alert("Successfully registered");
+      var user = result.user;
+      console.log(user);
+    })
+    .catch(function (error) {
+      alert(error.message);
     });
 }

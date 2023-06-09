@@ -52,6 +52,7 @@
     </style>
   </head>
   <body>
+    <!--
     <div class="container">
       <div id="sender">
         <input type="text" id="number" placeholder="+91" />
@@ -72,6 +73,25 @@
         <div class="n-conf" id="n-conf" style="display: none">OTP ERRORE</div>
       </div>
     </div>
+-->
+
+    <form action="">
+      <input type="text" id="number" placeholder="+91" />
+      <div id="recaptcha-container"></div>
+
+      <button type="button" onclick="phoneAuth()">otp send</button>
+    </form>
+    <br />
+    <form action="">
+      <input
+        type="text"
+        name=""
+        id="verficationcode"
+        placeholder="enter verification code"
+      />
+
+      <button type="button" onclick="codeverify()">Otp</button>
+    </form>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
