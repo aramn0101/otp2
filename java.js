@@ -81,11 +81,11 @@ function codeverify() {
   coderesult
     .confirm(code)
     .then(function (result) {
-      alert("Successfully registered");
       var user = result.user;
       console.log(user);
+      alert("Successfully registered");
     })
     .catch(function (error) {
-      alert(error.message);
+      alert("invaild otp");
     });
 }
