@@ -51,9 +51,7 @@ function codeverify() {
 }
 */
 
-window.onload = function () {
-  reader();
-};
+reader();
 function reader() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
     "recaptcha-container"
@@ -62,7 +60,7 @@ function reader() {
 }
 
 function phoneAuth() {
-  var number = document.getElementById("number").value;
+  var number = "+91" + document.getElementById("number").value;
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
