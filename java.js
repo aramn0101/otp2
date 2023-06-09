@@ -80,12 +80,10 @@ function codeverify() {
   var code = document.getElementById("verificationcode").value;
   coderesult
     .confirm(code)
-    .then(function (result) {
-      var user = result.user;
-      console.log(user);
-      alert("Successfully registered");
+    .then(function () {
+      alert("successful");
     })
-    .catch(function (error) {
+    .catch(function () {
       alert("invaild otp");
     });
 }
