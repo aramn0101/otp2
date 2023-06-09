@@ -75,10 +75,8 @@ function phoneAuth() {
       alert(error.message);
     });
 }
-
 function codeverify() {
-  var code = document.getElementById("verificationcode").value;
-
+  var code = document.getElementById("verifiycode").value;
   coderesult
     .confirm(code)
     .then(function (result) {
