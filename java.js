@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-/*
+
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -18,7 +18,7 @@ function render() {
   );
   recaptchaVerifier.render();
 }
-
+/*
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
 
@@ -54,11 +54,11 @@ function codeverify() {
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    "recaptcha-container"
+    "recaptcha-containern"
   );
   recaptchaVerifier.render();
 }
-
+/*
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
   var number1 = "+91" + document.getElementById("number").value;
@@ -98,7 +98,7 @@ function codeverify() {
       }
     });
 }
-
+*/
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -128,6 +128,7 @@ function number() {
     document.getElementById("form3").style.display = "block";
   } else {
     document.getElementById("form2").style.display = "none";
+    document.getElementById("form3").style.display = "none";
   }
   var number = "+91" + document.getElementById("numberotp").value;
   var number1 = "+91" + document.getElementById("numberotp").value;
@@ -156,7 +157,7 @@ function number() {
     });
 }
 
-function otp() {
+function ganrate() {
   var code = document.getElementById("otp").value;
   coderesult
     .confirm(code)
