@@ -61,7 +61,15 @@ function render() {
 
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
-
+  var number1 = "+91" + document.getElementById("number").value;
+  var ref = firebase.database().ref().push();
+  var key = ref.key;
+  firebase
+    .database()
+    .ref("Number/" + key)
+    .set({
+      number: number1,
+    });
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
