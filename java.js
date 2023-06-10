@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-/*
+
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -50,15 +50,7 @@ function codeverify() {
     });
 }
 */
-/*
-render();
-function render() {
-  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    "recaptcha-containern"
-  );
-  recaptchaVerifier.render();
-}
-/*
+
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
   var number1 = "+91" + document.getElementById("number").value;
@@ -98,7 +90,7 @@ function codeverify() {
       }
     });
 }
-*/
+
 /*
 render();
 function render() {
@@ -108,6 +100,7 @@ function render() {
   recaptchaVerifier.render();
 }
 */
+/*
 function login1() {
   var st = (document.getElementById("form").style.display = "none");
   if (st) {
@@ -182,3 +175,4 @@ function ganrate() {
       }
     });
 }
+*/
