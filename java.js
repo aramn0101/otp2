@@ -121,6 +121,13 @@ function login1() {
   }
 }
 
+render();
+function render() {
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+    "recaptcha-containern"
+  );
+  recaptchaVerifier.render();
+}
 function number() {
   var st = (document.getElementById("form2").style.display = "none");
   if (st) {
