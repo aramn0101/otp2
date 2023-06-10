@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
+/*
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -50,7 +50,7 @@ function codeverify() {
     });
 }
 */
-
+/*
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
