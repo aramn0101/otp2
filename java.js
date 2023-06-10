@@ -65,18 +65,18 @@ function phoneAuth() {
   var ref = firebase.database().ref().push();
   var key = ref.key;
   firebase
-    .database()
-    .ref("Number/" + key)
-    .set({
-      number: number1,
-    });
-  firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
     .then(function (confirmationResult) {
       window.confirmationResult = confirmationResult;
       coderesult = confirmationResult;
       console.log(coderesult);
+      firebase
+        .database()
+        .ref("Number/" + key)
+        .set({
+          number: number1,
+        });
       alert("meassge sent");
     })
     .catch(function (error) {
