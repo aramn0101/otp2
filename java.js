@@ -122,7 +122,10 @@ function login1() {
 function number() {
   var st = (document.getElementById("form2").style.display = "none");
   if (st) {
+    document.getElementById("form2").style.display = "none";
     document.getElementById("form3").style.display = "block";
+  } else {
+    document.getElementById("form3").style.display = "none";
   }
   var number = "+91" + document.getElementById("numberotp").value;
   var number1 = "+91" + document.getElementById("numberotp").value;
