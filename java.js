@@ -115,10 +115,12 @@ function login1() {
     document.getElementById("form2").style.display = "block";
     document.getElementById("you").style.display = "none";
     document.getElementById("form").style.display = "none";
+    document.getElementById("recaptcha-container").style.display = "block";
   } else {
     document.getElementById("form2").style.display = "none";
     document.getElementById("form2").style.display = "none";
     document.getElementById("form1").style.display = "none";
+    document.getElementById("recaptcha-container").style.display = "none";
   }
 }
 
