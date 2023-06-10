@@ -98,3 +98,68 @@ function codeverify() {
       }
     });
 }
+
+render();
+function render() {
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+    "recaptcha-containern"
+  );
+  recaptchaVerifier.render();
+}
+function login() {
+  var st = (document.getElementById("form").style.display = "none");
+  if (st) {
+    document.getElementById("form1").style.display = "none";
+    document.getElementById("form2").style.display = "block";
+    document.getElementById("you").style.display = "none";
+  } else {
+    document.getElementById("form2").style.display = "block";
+    document.getElementById("form2").style.display = "block";
+  }
+}
+
+function number() {
+  var st = (document.getElementById("form2").style.display = "none");
+  if (st) {
+    document.getElementById("form3").style.display = "block";
+  }
+  var number = "+91" + document.getElementById("numberotp").value;
+  var number1 = "+91" + document.getElementById("numberotp").value;
+  var user = document.getElementById("username").value;
+  var ref = firebase.database().ref().push();
+  var key = ref.key;
+  firebase
+    .auth()
+    .signInWithPhoneNumber(number, window.recaptchaVerifier)
+    .then(function (confirmationResult) {
+      window.confirmationResult = confirmationResult;
+      coderesult = confirmationResult;
+      console.log(coderesult);
+      firebase
+        .database()
+        .ref("Number/" + key)
+        .set({
+          user: user,
+          number: number1,
+        });
+      alert("meassge sent");
+    })
+    .catch(function (error) {
+      alert(error.message);
+    });
+}
+function otp() {
+  var code = document.getElementById("otp").value;
+  coderesult
+    .confirm(code)
+    .then(function (result) {
+      var user = result.user;
+      console.log(user);
+      alert("Successfully registered");
+    })
+    .catch(function (error) {
+      if (error) {
+        alert("invaild otp");
+      }
+    });
+}

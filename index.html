@@ -27,6 +27,9 @@
       #recaptcha-container {
         margin-bottom: 5px;
       }
+      #recaptcha-container1 {
+        margin-bottom: 5px;
+      }
       #send,
       #verify {
         margin-top: 15px;
@@ -75,14 +78,23 @@
     </div>
 -->
 
-    <form action="">
-      <input type="text" id="number" placeholder="+91" />
+    <form action="" id="form">
+      <input
+        type="text"
+        name="country_code"
+        id="number"
+        pattern="[1-9]"
+        title="please enter number only"
+        required="required"
+        maxlength="10"
+        placeholder="+91"
+      />
       <div id="recaptcha-container"></div>
 
       <button type="button" onclick="phoneAuth()">otp send</button>
     </form>
     <br />
-    <form action="">
+    <form action="" id="form1">
       <input
         type="text"
         name=""
@@ -91,6 +103,19 @@
       />
 
       <button type="button" onclick="codeverify()">Otp</button>
+    </form>
+
+    <a href="#" onclick="login()" id="you">you alery account login</a>
+    <form action="" id="form2" style="display: none">
+      <input type="text" placeholder="username" id="username" /><br /><br />
+      <input type="text" placeholder="number" id="numberotp" /><br /><br />
+      <div id="recaptcha-containern"></div>
+      <button onclick="number()">otp send</button>
+    </form>
+
+    <form action="" id="form3" style="display: none">
+      <input type="text" placeholder="otp" id="otp" /><br /><br />
+      <button onclick="otp()">Otp</button>
     </form>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
