@@ -106,12 +106,13 @@ function render() {
   );
   recaptchaVerifier.render();
 }
-function login() {
+function login1() {
   var st = (document.getElementById("form").style.display = "none");
   if (st) {
     document.getElementById("form1").style.display = "none";
     document.getElementById("form2").style.display = "block";
     document.getElementById("you").style.display = "none";
+    document.getElementById("form").style.display = "none";
   } else {
     document.getElementById("form2").style.display = "block";
     document.getElementById("form2").style.display = "block";
