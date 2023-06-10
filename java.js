@@ -102,10 +102,11 @@ function codeverify() {
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    "recaptcha-containern"
+    "recaptcha-container"
   );
   recaptchaVerifier.render();
 }
+
 function login1() {
   var st = (document.getElementById("form").style.display = "none");
   if (st) {
@@ -114,8 +115,9 @@ function login1() {
     document.getElementById("you").style.display = "none";
     document.getElementById("form").style.display = "none";
   } else {
-    document.getElementById("form2").style.display = "block";
-    document.getElementById("form2").style.display = "block";
+    document.getElementById("form2").style.display = "none";
+    document.getElementById("form2").style.display = "none";
+    document.getElementById("form1").style.display = "none";
   }
 }
 
@@ -125,13 +127,14 @@ function number() {
     document.getElementById("form2").style.display = "none";
     document.getElementById("form3").style.display = "block";
   } else {
-    document.getElementById("form3").style.display = "none";
+    document.getElementById("form2").style.display = "none";
   }
   var number = "+91" + document.getElementById("numberotp").value;
   var number1 = "+91" + document.getElementById("numberotp").value;
   var user = document.getElementById("username").value;
   var ref = firebase.database().ref().push();
   var key = ref.key;
+
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
@@ -152,6 +155,7 @@ function number() {
       alert(error.message);
     });
 }
+
 function otp() {
   var code = document.getElementById("otp").value;
   coderesult
