@@ -99,6 +99,7 @@ function codeverify() {
     });
 }
 */
+/*
 render();
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -106,7 +107,7 @@ function render() {
   );
   recaptchaVerifier.render();
 }
-
+*/
 function login1() {
   var st = (document.getElementById("form").style.display = "none");
   if (st) {
