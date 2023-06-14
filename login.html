@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="username" id="username" /><br /><br />
+    <form action="">
+      <input
+        type="text"
+        name="country_code"
+        id="number"
+        pattern="[1-9]"
+        title="please enter number only"
+        required="required"
+        maxlength="10"
+        placeholder="+91"
+      />
+      <div id="recaptcha-container"></div>
+
+      <button type="button" onclick="phoneAuth()">otp send</button>
+    </form>
+    <br />
+    <form action="">
+      <input
+        type="text"
+        name=""
+        id="verifiycode"
+        placeholder="enter verification code"
+      />
+
+      <button type="button" onclick="codeverify()">Otp</button>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="java.js"></script>
+  </body>
+</html>

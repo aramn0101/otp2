@@ -54,8 +54,12 @@ function codeverify() {
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
   var number1 = "+91" + document.getElementById("number").value;
+  var username = document.getElementById("username").value;
   var ref = firebase.database().ref().push();
   var key = ref.key;
+  localStorage.setItem("number", number);
+  localStorage.setItem("username", username);
+  localStorage.setItem("login", "true");
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
