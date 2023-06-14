@@ -86,7 +86,7 @@ function codeverify() {
     .then(function (result) {
       var user = result.user;
       console.log(user);
-      alert("Successfully registered");
+      window.location.replace("index.html");
     })
     .catch(function (error) {
       if (error) {
