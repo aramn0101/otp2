@@ -54,11 +54,11 @@ function codeverify() {
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
   var number1 = "+91" + document.getElementById("number").value;
-  var username = document.getElementById("username").value;
+  var name = document.getElementById("username").value;
   var ref = firebase.database().ref().push();
   var key = ref.key;
-  localStorage.setItem("username", username);
-  localStorage.setItem("number", number);
+  localStorage.setItem("name1", name);
+  localStorage.setItem("number1", number);
   localStorage.setItem("login", "true");
   firebase
     .auth()

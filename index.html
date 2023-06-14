@@ -75,8 +75,8 @@
     <script>
       var login = localStorage.getItem("login");
       if (login == "true") {
-        var name = localStorage.getItem("number");
-        var passowrod = localStorage.getItem("username");
+        var name = localStorage.getItem("name");
+        var number = localStorage.getItem("number");
         document.getElementById("text").innerHTML = name;
         document.getElementById("login-a").style.display = "none";
         document.getElementById("text2").innerHTML = name;
@@ -87,7 +87,7 @@
         document.getElementById("username").style.display = "block";
         document.getElementById("number").style.display = "block";
         document.getElementById("username").innerHTML = name;
-        document.getElementById("number").innerHTML = passowrod;
+        document.getElementById("number").innerHTML = number;
         document.getElementById("text2").style.display = "none";
       }
     </script>
