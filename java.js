@@ -57,8 +57,8 @@ function phoneAuth() {
   var username = document.getElementById("username").value;
   var ref = firebase.database().ref().push();
   var key = ref.key;
-  localStorage.setItem("number", number);
   localStorage.setItem("username", username);
+  localStorage.setItem("number", number);
   localStorage.setItem("login", "true");
   firebase
     .auth()
